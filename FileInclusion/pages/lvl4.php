@@ -21,19 +21,21 @@
       <?php     
         echo "</br></br>";
 
-        if (isset( $_GET[ 'file' ])) 
-        {
-          $secure4 = $_GET[ 'file' ];
+        if (isset( $_GET[ 'file' ])) {
+          
+          $secure4 = basename($_GET[ 'file' ]);
+
+          $allowed_files = ['1.php', '2.php'];
          
-            if ($secure4!="1.php" && $secure4!="2.php") 
-            {
-              $secure4=substr($secure4, 0,-4);
-            }
-            
-            if (isset($secure4)) 
-            {        
-              include($secure4);              
-            }
+        if (in_array($secure4, $allowed_files)) {
+
+              include($secure4);
+
+            } else {
+
+              echo "Access denied.";
+
+            }      
         }              
       ?>
    </body>
