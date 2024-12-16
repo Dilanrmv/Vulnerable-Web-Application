@@ -19,12 +19,25 @@
       
       <?php
         echo "</br></br>";
+
+
+      $allowed_files = ['home.php', 'about.php', 'contact.php'];
+
+
+      if (isset($_GET['file'])) {
+         $file = $_GET['file'];
+
+         if (in_array($file, $allowed_files)) {
+            include($file);
+            echo "<div align='center'><b><h5>" . htmlspecialchars($file) . "</h5></b></div>";
+         } else {
         
-        if (isset( $_GET[ 'file' ]))        
-        {
-          @include($_GET[ 'file' ]);
-          echo"<div align='center'><b><h5>".$_GET[ 'file' ]."</h5></b></div> ";       
-        }
+            echo "Archivo no permitido.";
+         }
+      } else {
+         echo "No se ha especificado un archivo.";
+      }
+
       ?>
    </body>
 </html>
