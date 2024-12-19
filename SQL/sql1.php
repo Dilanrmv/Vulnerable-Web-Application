@@ -36,7 +36,7 @@
 	//echo "Connected successfully";
 	
 	if(isset($_POST["submit"])){
-		$firstname = $_POST["firstname"];
+		$firstname = mysqli_real_escape_string($conn,$_POST["firstname"]);
 		$sql = "SELECT lastname FROM users WHERE firstname='$firstname'";//String
 		$result = mysqli_query($conn,$sql);
 		
