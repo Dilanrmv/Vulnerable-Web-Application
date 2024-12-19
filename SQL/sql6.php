@@ -32,7 +32,7 @@
 	//echo "Connected successfully";
 	$source = "";
 	if(isset($_GET["submit"])){
-		$number = $_GET['number'];
+		$number = intval($_GET['number']);
 		$query = "SELECT bookname,authorname FROM books WHERE number = '$number'";
 		$result = mysqli_query($conn,$query);
 		$row = @mysqli_num_rows($result);
