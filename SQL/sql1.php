@@ -16,6 +16,7 @@
 		<p>John -> Doe</p>
 		First name : <input type="text" name="firstname">
 		<input type="submit" name="submit" value="Submit">
+		
 	</form>
 	</div>
 
