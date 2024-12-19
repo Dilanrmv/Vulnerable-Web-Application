@@ -30,7 +30,7 @@
 
 	// Check connection
 	if ($conn->connect_error) {
-	    die("Connection failed: " . mysqli_connect_error());
+	    die("Connection failed: " . $conn->connect_error);
 	} 
 	//echo "Connected successfully";
 	if(isset($_POST["submit"])){

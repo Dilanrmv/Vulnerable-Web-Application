@@ -37,7 +37,7 @@
 	} 
 	//echo "Connected successfully";
 	if(isset($_POST["submit"])){
-		$number = $_POST['number'];
+		$number = intval($_POST['number']);
 		//You hacked me again?
 		//I updated my code
 		if(strchr($number,"'")){
